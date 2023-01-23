@@ -1,6 +1,3 @@
-
-
-
 import 'dart:ui';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -15,10 +12,8 @@ import 'package:new_project/screens_drivers/signup.dart';
 
 import 'firebase_options.dart';
 
-
 import './screens_drivers/profile.dart';
 import './screens_drivers/map.dart';
-
 
 import 'package:new_project/services/Authenticate/authenticate.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -29,16 +24,13 @@ Future<void> main() async {
   //   options: DefaultFirebaseOptions.currentPlatform,
   // );
 
-  runApp(
-     MaterialApp(theme:ThemeData.dark(),debugShowCheckedModeBanner: false,home:  Map(),
-     routes: {
-
-       '/login':(context)=>const loginscreen(),
-       '/home':(context)=>const EditProfile(),
-
-     },
-     )
-    
-  );
-
+  runApp(MaterialApp(
+    theme: ThemeData.dark(),
+    debugShowCheckedModeBanner: false,
+    home: Map(),
+    routes: {
+      '/login': (context) => const loginscreen(),
+      '/home': (context) => const EditProfile(),
+    },
+  ));
 }

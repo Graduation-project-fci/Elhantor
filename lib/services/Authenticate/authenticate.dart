@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firedart/auth/client.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -60,27 +61,29 @@ class Auth {
 
   FirebaseAuth? _auth;
   //return current User
-  List getCurrentUser()  {
+  List getCurrentUser() {
     final User? user = mAuth.currentUser;
 
     final x = (user!.providerData.toList());
     return x;
   }
+
   //send verfication email
-  Future<void> verifyEmail()async {
+  Future<void> verifyEmail() async {
     final user = FirebaseAuth.instance.currentUser;
     await FirebaseAuth.instance.setLanguageCode("en");
     await user?.sendEmailVerification();
   }
-  //reset password 
-  Future<void>resetPassword(String email)async{
-    await FirebaseAuth.instance
-    .sendPasswordResetEmail(email: email);
 
+  //reset password
+  Future<void> resetPassword(String email) async {
+    await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
   }
-  //sign out 
-  Future<void>signout()async{
+
+  //sign out
+  Future<void> signout() async {
     await FirebaseAuth.instance.signOut();
   }
+
 
 }

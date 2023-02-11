@@ -3,17 +3,26 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_sign_in/google_sign_in.dart';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:flutter/material.dart';
+import './screens_drivers/profile.dart';
+
+//import 'package:google_sign_in/google_sign_in.dart';
+
 import 'package:new_project/services/Authenticate/authenticate.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      //options:DefaultFirebaseOptions.currentPlatform,
-      );
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(
-    const MyApp(),
+    const EditProfile(),
   );
 }
 
@@ -50,10 +59,15 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   DatabaseReference ref = FirebaseDatabase.instance.ref();
+
+  //final GoogleSignIn _googleSignIn = GoogleSignIn();
+  CollectionReference drivers =
+      FirebaseFirestore.instance.collection('drivers');
+
   final auth = Auth();
 
   @override
-  Widget build(BuildContext context) {
+  build(BuildContext context) async {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -67,21 +81,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (() async => {
-          await ref.set({
-  "name": "John",
-  "age": 18,
-  "address": {
-    "line1": "100 Mountain View"
-  }
-})
-        }),
+              setState(() {
+                _counter++;
+              })
+            }),
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );

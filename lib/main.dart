@@ -65,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
       FirebaseFirestore.instance.collection('drivers');
 
   final auth = Auth();
+  int x = 10;
   //again
 
   @override

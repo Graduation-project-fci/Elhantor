@@ -47,14 +47,13 @@ dependencies:
   firebase_database: ^10.0.9
   flutter_signin_button: ^2.0.0
   cloud_firestore: ^4.3.1
-<<<<<<< HEAD
-=======
+
   image_picker: ^0.8.6+1
   firebase_storage: ^11.0.11
->>>>>>> 55be097 (Alamir)
-  
-  
-  
+  persian_datetime_picker: ^2.5.0
+  awesome_dialog: ^3.0.2
+  google_maps_flutter: ^2.2.3
+  location: ^4.2.0
 
 dev_dependencies:
   flutter_test:

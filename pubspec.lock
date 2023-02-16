@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  awesome_dialog:
+    dependency: "direct main"
+    description:
+      name: awesome_dialog
+      sha256: ac08268b991f228fc6b8880b68ec030d2941bcc8df8b6a6551fb79f2bd36b7da
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -53,36 +61,24 @@ packages:
     dependency: "direct main"
     description:
       name: cloud_firestore
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: a851106a2169c15614047b75ea10d0346650352c6669ab482306572aa4ed9a7d
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "4.3.1"
   cloud_firestore_platform_interface:
     dependency: transitive
     description:
       name: cloud_firestore_platform_interface
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "1fac512fef2bfe84ca7f372defbd9dd8efb108be96854db9023739a5b2aa9977"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "5.10.1"
   cloud_firestore_web:
     dependency: transitive
     description:
       name: cloud_firestore_web
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "3fd9581c1447b6e8db6d0f19d0140b196a70ecf582bd1f71e7141fe9abf10ddb"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "3.2.1"
   collection:
@@ -137,24 +133,16 @@ packages:
     dependency: transitive
     description:
       name: ffi
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: a38574032c5f1dd06c4aee541789906c12ccaab8ba01446e800d9c5b79c4a978
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.0.1"
   file:
     dependency: transitive
     description:
       name: file
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "1b92bec4fc2a72f59a8e15af5f52cd441e4a7860b49499d69dfa817af20e925d"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "6.1.4"
   firebase_auth:
@@ -204,44 +192,27 @@ packages:
       sha256: "4b3a41410f3313bb95fd560aa5eb761b6ad65c185de772c72231e8b4aeed6d18"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "2.1.0"
-=======
     version: "2.1.1"
->>>>>>> 55be097 (Alamir)
   firebase_database:
     dependency: "direct main"
     description:
       name: firebase_database
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: d2ee0e52955cfd55ab716a48a71b85b727cde8542c4deb3a9013b2812dd1891e
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "10.0.9"
   firebase_database_platform_interface:
     dependency: transitive
     description:
       name: firebase_database_platform_interface
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "1329ade83b77b7b3158f1e9b3d332541ec398481b5d4ad213d94de7a575c07b6"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "0.2.2+17"
   firebase_database_web:
     dependency: transitive
     description:
       name: firebase_database_web
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.1+19"
-=======
       sha256: "8414131490173e20b165ccbc03f2ff141d7b0f2999edb9ea48d8d77249f93e9f"
       url: "https://pub.dev"
     source: hosted
@@ -270,7 +241,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.3.20"
->>>>>>> 55be097 (Alamir)
   firedart:
     dependency: "direct main"
     description:
@@ -296,12 +266,8 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_animate
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "977f08c6a98bd7ce64a9828b0bde19f42a10031899704227ccdac3e8fbd8fe14"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.2.0"
   flutter_lints:
@@ -312,8 +278,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
-<<<<<<< HEAD
-=======
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -322,17 +286,12 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.7"
->>>>>>> 55be097 (Alamir)
   flutter_signin_button:
     dependency: "direct main"
     description:
       name: flutter_signin_button
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: a063ecc5d5308377e103c9c3a89084abf15fca4440636233af6a13abacd5dcae
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.0.0"
   flutter_test:
@@ -349,26 +308,50 @@ packages:
     dependency: transitive
     description:
       name: font_awesome_flutter
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "1f93e5799f0e6c882819e8393a05c6ca5226010f289190f2242ec19f3f0fdba5"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "9.2.0"
   google_fonts:
     dependency: "direct main"
     description:
       name: google_fonts
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "8f099045e2f2a30e4d4d0a35f40c6bc941a8f2ca0e10ad9d214ee9edd3f37483"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "3.0.1"
+  google_maps_flutter:
+    dependency: "direct main"
+    description:
+      name: google_maps_flutter
+      sha256: "0c6b72b4b1e0f6204973e2b40868a75fe6380725d498f215cd7e35ed920d1c57"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.3"
+  google_maps_flutter_android:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_android
+      sha256: "4152d1ddf6393cb7de73c406e1a4feba343f15f7b85494354ebee69730daee53"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.5"
+  google_maps_flutter_ios:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_ios
+      sha256: "33bbca8d4148ed373251ea2ec2344fdc63009926b6d6be71a0854fd42409b1ba"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.13"
+  google_maps_flutter_platform_interface:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_platform_interface
+      sha256: "0967430c25240836b794d42336bd4c61f0e78e9fd33d1365fa9316bb36b6b410"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.5"
   google_sign_in:
     dependency: "direct main"
     description:
@@ -417,6 +400,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
+  graphs:
+    dependency: transitive
+    description:
+      name: graphs
+      sha256: f9e130f3259f52d26f0cfc0e964513796dafed572fa52e45d2f8d6ca14db39b2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.0"
   grpc:
     dependency: transitive
     description:
@@ -513,6 +504,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  location:
+    dependency: "direct main"
+    description:
+      name: location
+      sha256: "9051959f6f2ccadd887b28b66e9cbbcc25b6838e37cf9e894c421ccc0ebf80b5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.4.0"
+  location_platform_interface:
+    dependency: transitive
+    description:
+      name: location_platform_interface
+      sha256: "62eeaf1658e92e4459b727f55a3c328eccbac8ba043fa6d262ac5286ad48384c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0"
+  location_web:
+    dependency: transitive
+    description:
+      name: location_web
+      sha256: "6c08c408a040534c0269c4ff9fe17eebb5a36dea16512fbaf116b9c8bc21545b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.1"
   matcher:
     dependency: transitive
     description:
@@ -557,96 +572,72 @@ packages:
     dependency: transitive
     description:
       name: path_provider
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "050e8e85e4b7fecdf2bb3682c1c64c4887a183720c802d323de8a5fd76d372dd"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.0.11"
   path_provider_android:
     dependency: transitive
     description:
       name: path_provider_android
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: a776c088d671b27f6e3aa8881d64b87b3e80201c64e8869b811325de7a76c15e
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.0.22"
   path_provider_ios:
     dependency: transitive
     description:
       name: path_provider_ios
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "03d639406f5343478352433f00d3c4394d52dac8df3d847869c5e2333e0bbce8"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.0.11"
   path_provider_linux:
     dependency: transitive
     description:
       name: path_provider_linux
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: ab0987bf95bc591da42dffb38c77398fc43309f0b9b894dcc5d6f40c4b26c379
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.1.7"
   path_provider_macos:
     dependency: transitive
     description:
       name: path_provider_macos
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: cd57cb98a30ce9d12fdd1896d9d3b0517ce689f942de6ccd2708cd39b3d18a7c
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.0.7"
   path_provider_platform_interface:
     dependency: transitive
     description:
       name: path_provider_platform_interface
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: f0abc8ebd7253741f05488b4813d936b4d07c6bae3e86148a09e342ee4b08e76
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.0.5"
   path_provider_windows:
     dependency: transitive
     description:
       name: path_provider_windows
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: bcabbe399d4042b8ee687e17548d5d3f527255253b4a639f5f8d2094a9c2b45c
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "2.1.3"
+  persian_datetime_picker:
+    dependency: "direct main"
+    description:
+      name: persian_datetime_picker
+      sha256: cf49e2e74d11f68eaa4d5864d37d778d6725644e951481ade06adacb156ef08b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.5.0"
   platform:
     dependency: transitive
     description:
       name: platform
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "4a451831508d7d6ca779f7ac6e212b4023dd5a7d08a27a63da33756410e32b76"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "3.1.0"
   plugin_platform_interface:
@@ -669,12 +660,8 @@ packages:
     dependency: transitive
     description:
       name: process
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: "53fd8db9cec1d37b0574e12f07520d582019cb6c44abf5479a01505099a34a09"
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "4.2.4"
   protobuf:
@@ -701,6 +688,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.1"
+  rive:
+    dependency: transitive
+    description:
+      name: rive
+      sha256: "22e3755b75f4ea4492d2fecf4fc2acf1c8d0073df39781d290a20cbfe74c3760"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.9.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -730,6 +725,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  stream_transform:
+    dependency: transitive
+    description:
+      name: stream_transform
+      sha256: "14a00e794c7c11aa145a170587321aedce29769c08d7f58b1d141da75e3b1c6f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   string_scanner:
     dependency: transitive
     description:
@@ -769,33 +772,21 @@ packages:
       sha256: "80b3257d1492ce4d091729e3a67a60407d227c27241d6927be0130c98e741803"
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
-    version: "2.1.2"
-=======
     version: "2.1.4"
->>>>>>> 55be097 (Alamir)
   win32:
     dependency: transitive
     description:
       name: win32
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: c9ebe7ee4ab0c2194e65d3a07d8c54c5d00bb001b76081c4a04cdb8448b59e46
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "3.1.3"
   xdg_directories:
     dependency: transitive
     description:
       name: xdg_directories
-<<<<<<< HEAD
-      url: "https://pub.dartlang.org"
-=======
       sha256: bd512f03919aac5f1313eb8249f223bacf4927031bf60b02601f81f687689e86
       url: "https://pub.dev"
->>>>>>> 55be097 (Alamir)
     source: hosted
     version: "0.2.0+3"
 sdks:

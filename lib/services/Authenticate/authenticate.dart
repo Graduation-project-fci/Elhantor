@@ -1,6 +1,9 @@
+
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firedart/auth/client.dart';
+
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Auth {
@@ -45,18 +48,31 @@ class Auth {
 
   late final FirebaseAuth mAuth = FirebaseAuth.instance;
   //login with email and password
-  Future<void> LoginWithEmailAndPassword(
-      String emailAddress, String password) async {
+  Future<String?> LoginWithEmailAndPassword(
+      String emailAddress, String password)  async {
+    String result='';
     try {
-      final credential = await FirebaseAuth.instance
+      final credential = await  FirebaseAuth.instance
           .signInWithEmailAndPassword(email: emailAddress, password: password);
+
+
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
+
+        result= e.code;
+
+
+
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
+        result= e.code;
+
       }
+
     }
+    return result;
+
   }
 
   FirebaseAuth? _auth;

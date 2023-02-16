@@ -25,6 +25,7 @@ class _EditProfileState extends State<EditProfile> {
 
     setState(() {
       img1 = img;
+
     });
   }
 

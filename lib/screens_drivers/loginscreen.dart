@@ -73,7 +73,7 @@ class _loginscreenState extends State<loginscreen> {
 
                           if (fomstate.currentState!.validate()) {
                             fomstate.currentState!.save();
-                            String? result=await _auth.LoginWithEmailAndPassword(user.text, pass.text) as String?;
+                            String? result=await _auth.LoginWithEmailAndPassword(context,user.text , pass.text) ;
                             if(result==''){
                               ScaffoldMessenger.of(context).showSnackBar(
 

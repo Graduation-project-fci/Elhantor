@@ -1,8 +1,9 @@
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-
+import 'package:new_project/services/Database/admin_services.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -25,9 +26,11 @@ class Auth {
       print(e);
     }
   }
+  Admin admin=Admin();
+  FirebaseAuth auth = FirebaseAuth.instance;
 
 //register with google
-  Future<UserCredential> signInWithGoogle() async {
+  Future<UserCredential?> signInWithGoogle() async {
     // Trigger the authentication flow
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
@@ -40,39 +43,43 @@ class Auth {
       accessToken: googleAuth?.accessToken,
       idToken: googleAuth?.idToken,
     );
-
-    // Once signed in, return the UserCredential
-
     return await FirebaseAuth.instance.signInWithCredential(credential);
+
+
+
   }
 
   late final FirebaseAuth mAuth = FirebaseAuth.instance;
   //login with email and password
-  Future<String?> LoginWithEmailAndPassword(
-      String emailAddress, String password)  async {
-    String result='';
-    try {
-      final credential = await  FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: emailAddress, password: password);
+  Future<String?> LoginWithEmailAndPassword(BuildContext context,
+      String emailAddress,  String password)  async {
+    String result = '';
+    if (emailAddress == null || password == null) {
+      return null;
+    } else {
+      try {
+        final credential = await FirebaseAuth.instance
+            .signInWithEmailAndPassword(
+            email: emailAddress, password: password);
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'user-not-found') {
+          print('No user found for that email.');
 
+          result = e.code;
+        } else if (e.code == 'wrong-password') {
+          print('Wrong password provided for that user.');
+          result = e.code;
+        }
+        String id = FirebaseAuth.instance.currentUser!.uid;
 
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        print('No user found for that email.');
-
-        result= e.code;
-
-
-
-      } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
-        result= e.code;
-
+        if (admin.isUserBanned(id) == true) {
+          result = 'User is Banned from the application';
+        }
       }
+      ScaffoldMessenger.of(context).showSnackBar(
 
+          SnackBar(content: Text('$result')));
     }
-    return result;
-
   }
 
   FirebaseAuth? _auth;
@@ -100,6 +107,8 @@ class Auth {
   Future<void> signout() async {
     await FirebaseAuth.instance.signOut();
   }
+
+
 
 
 }

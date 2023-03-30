@@ -9,14 +9,18 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
    <application
 
-        android:label="new_project"
+        android:label="HantoryGo"
 
 
-    android:name="${applicationName}"
+    android:name="Application"
         android:icon="@mipmap/ic_launcher">
         android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+       
+
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyAgwCjXHAxPQf3z3crLP35DixczqbTUqJE"/>
+           android:value="AIzaSyCkXfVBkPTvS4YcFAOEB3Dw_VMdahlXzKQ"/>
+       <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -24,6 +28,8 @@
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
+
+
             android:windowSoftInputMode="adjustResize">
             <!-- Specifies an Android theme to apply to this Activity as soon as
                  the Android process has started. This theme is visible to the user

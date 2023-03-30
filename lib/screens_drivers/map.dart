@@ -1,81 +1,107 @@
 import 'dart:async';
-import 'package:location/location.dart';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
-import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'package:geolocator/geolocator.dart';
 
-
-
-class Map extends StatefulWidget {
-  const Map({Key? key}) : super(key: key);
-
+class MapPage extends StatefulWidget {
   @override
-  State<Map> createState() => _MapState();
+  _MapPageState createState() => _MapPageState();
 }
 
-class _MapState extends State<Map> {
-  late LocationData _locationData;
+class _MapPageState extends State<MapPage> {
+  late final MapController _marker = MapController();
+  late LatLng _currentLocation = LatLng(0, 0);
+  List<Marker> _markers = [];
 
-  Future<LocationData?> _onMapCreated(GoogleMapController _cntlr)
-  async {
-    Location location = new Location();
+  @override
+  void initState() {
+    super.initState();
+    _getCurrentLocation();
+  }
 
-    bool _serviceEnabled;
-    PermissionStatus _permissionGranted;
-
-
-    _serviceEnabled = await location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await location.requestService();
-      if (!_serviceEnabled) {
-        return null;
-      }
+  Future<void> _getCurrentLocation() async {
+    try {
+      final currentLocation = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
+      setState(() {
+        _currentLocation = LatLng(
+          currentLocation.latitude,
+          currentLocation.longitude,
+        );
+        _addMarkerAtUserLocation();
+      });
+    } catch (e) {
+      print('Error: ${e.toString()}');
     }
-
-    _permissionGranted = await location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await location.requestPermission();
-      if (_permissionGranted != PermissionStatus.granted) {
-        return null;
-      }
-    }
-
-    _locationData = await location.getLocation();
+  }
 
 
-    }
+  void _addMarkerAtUserLocation() {
+    // Create a marker at the user's location
+    final marker = Marker(
+      point: _currentLocation,
+      builder: (ctx) => Icon(Icons.location_on,color: Colors.red,size: 40,),
+    );
 
+    // Update the FlutterMap widget with the new marker
+    setState(() {
+      _markers.clear();
+      _markers.add(marker);
+      _marker.move(_currentLocation, 16);
+    });
+  }
 
-
+  bool _isOnline = false;
+  String status = "Offline";
 
   @override
   Widget build(BuildContext context) {
-    return   MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Maps Sample App'),
-            backgroundColor: Colors.green[700],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 0, 0, 128),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(_isOnline ? 'Online' : 'Offline', style: TextStyle(fontSize: 16)),
+            SizedBox(width: 10),
+            Switch(
+              value: _isOnline,
+              onChanged: (value) {
+                setState(() {
+                  _isOnline = value;
+                  status = value ? 'Online' : 'Offline';
+                });
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('You are $status now'),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      body: FlutterMap(
+        mapController: _marker,
+        options: MapOptions(
+          center: _currentLocation,
+          zoom: 16.0,
+        ),
+        layers: [
+          TileLayerOptions(
+            urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            subdomains: ['a', 'b', 'c'],
           ),
-          body: Stack(
-            children: <Widget>[
-              GoogleMap(initialCameraPosition: CameraPosition(target:
-              LatLng(_locationData.latitude as double,_locationData.longitude as double),
-
-                  zoom: 12),
-                mapType: MapType.hybrid,
-                onMapCreated: _onMapCreated,
-                myLocationEnabled: true,
-              )
-            ],
-          )
+          MarkerLayerOptions(
+            markers: _markers,
+          ),
+        ],
       ),
     );
-
   }
-  // Future<void> _goToTheLake() async {
-  //   final GoogleMapController controller = await _controller.future;
-  //   controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
-  // }
+
 }
